@@ -1,5 +1,5 @@
 class Table
-  attr_accessor :name, :recaudaciones
+  attr_reader :name, :recaudaciones
   def initialize(nombre, *recaudaciones)
     @name = nombre
     @recaudaciones = recaudaciones.map(&:to_i)
