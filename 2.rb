@@ -23,7 +23,7 @@ end
 def before_date(cursos, fecha = Date.today)
   cursos_filter = []
   # >= 2018-01-01.
-  raise ArgumentError.new("Fecha inválida, debe ser menor a: 2018-01-01.") if fecha >= Date.parse("2018-01-01")
+  raise ArgumentError.new("Fecha inválida, debe ser menor a: 2018-01-01.") if fecha >= Date.parse("2019-01-01")
   cursos.each do |curso|
     if Date.parse(curso.inicio) < fecha
       cursos_filter.push(curso.name)
@@ -35,7 +35,7 @@ end
 
 #curso finaliza despues de
 def after_date(cursos, fecha = Date.today)
-  raise ArgumentError.new("Fecha inválida, debe ser mayor a: 2018-01-01.") if fecha >= Date.parse("2018-01-01")
+  raise ArgumentError.new("Fecha inválida, debe ser mayor a: 2018-01-01.") if fecha >= Date.parse("2019-01-01")
   cursos_filter = []
   cursos.each do |curso|
     if Date.parse(curso.termino) > fecha
